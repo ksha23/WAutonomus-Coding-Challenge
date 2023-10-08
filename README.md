@@ -1,2 +1,2 @@
 # WAutonomus-Coding-Challenge
-All solutions are in the Coding Challenges folder
+All solutions are in the CodingChallenges folder
