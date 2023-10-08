@@ -1,28 +1,20 @@
-# Wisconsin Autonomous Perception Coding Challenge
+#Perception Challenge
+## Description
+This script takes in an image, uses opencv to identify red cones within the image, and draws two lines of best fit along the cones.
+One line will be on the left side of the image and the other will be on the right side. It is intended to be used on an image where the cones represent lane lines for a theoretical vehicle.
+The program will visualize some of the image processing done and will output a "output.png" file upon termination.
 
-This coding challenge is designed for us to evaluate what you can bring to the table and an opportunity for you to get some hands on experience with the tools we use in the team. Our perception software uses OpenCV for much of our image processing. A good understanding of image processing techniques and OpenCV is important for our success. This challenge aims to evaluate your problem-solving approach to computer vision problems. 
+## Setup
+run "pip3 install opencv-python"
 
+## Controls
+Press any key to continue through the program. The program ends on the last keystroke.
 
-## Challenge Description
-You are tasked to create a perception algorithm that can detect the boundaries of a straight path defined by cones taken by a camera attached to a vehicle, like the image below. Your code should draw boundary lines of the path on the image and save it as a png, "answer.png". 
-
-
-Original Image            |  sample answer.png
-:-------------------------:|:-------------------------:
-![](https://github.com/WisconsinAutonomous/CodingChallenges/blob/master/perception/red.png)  |  ![](https://github.com/WisconsinAutonomous/CodingChallenges/blob/master/perception/answer.png)
-
-
-## Submission Specification
-- Your code should be written in either Matlab, Python, or C++.
-- Please upload your code to a public github repository for us to review
-- Please document your code. The more readable your code is the better you can show your coding skills.
-- Please include a README that contains the following:
-    - answer.png
-    - Methodolgy 
-    - What did you try and why do you think it did not work.
-    - What libraries are used
-
-## Tips
-1. You are allowed to use any resources available to you. Google is your friend!
-3. Document as much as you can. We are looking for team members who are good communicators :)
-4. The learning curve can be steep here! We don't want you to get stuck! Feel free to message in slack if you have questions.
+## Implementation
+- mask is used to define a region of interst (ROI)
+- image is converted to HSV colors for better color detection
+- image is masked using color thresholds
+- color masks and and region of interst mask are merged
+- contour lines are found based on the merged mask
+- centroids of contour lines are found
+- some math is used to find endpoints of the lines of best fit
