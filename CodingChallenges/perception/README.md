@@ -1,4 +1,4 @@
-#Perception Challenge
+# Perception Challenge
 ## Description
 This script takes in an image, uses opencv to identify red cones within the image, and draws two lines of best fit along the cones.
 One line will be on the left side of the image and the other will be on the right side. It is intended to be used on an image where the cones represent lane lines for a theoretical vehicle.
